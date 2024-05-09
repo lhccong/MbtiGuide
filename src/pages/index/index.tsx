@@ -1,23 +1,21 @@
-import { View, Text } from "@tarojs/components";
+import { View, Image } from "@tarojs/components";
+import "taro-ui/dist/style/components/button.scss";
 import { AtButton } from "taro-ui";
-
-import "taro-ui/dist/style/components/button.scss"; // 按需引入
+import bgHeader from "../../assets/bgHeader.jpeg";
 import "./index.scss";
+
+import GlobalFooter from "../../components/GlobalFooter";
 
 export default () => {
   return (
     <View className="index">
-      <Text>Hello world!</Text>
-      <AtButton type="primary">I need Taro UI</AtButton>
-      <Text>Taro UI 支持 Vue 了吗？</Text>
+      <view className="at-article__h1">Mbti 性格测试</view>
+      <view className="at-article__h2">只需 2 分钟，就能非常准确的描述你是谁，以及你的性格特点</view>
       <AtButton type="primary" circle>
-        支持
+        开始测试
       </AtButton>
-      <Text>共建？</Text>
-      <AtButton type="secondary" circle>
-        来
-      </AtButton>
+      <Image src={bgHeader} />
+      <GlobalFooter />
     </View>
   );
 };
-
