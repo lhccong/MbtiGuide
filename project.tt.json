@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "MbtiGuide",
+  "description": "Mbti指南一款帮你了解个人性格方向的好帮手。",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
