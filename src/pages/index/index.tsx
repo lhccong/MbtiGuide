@@ -4,6 +4,9 @@ import headerBg from "../../assets/headerBg.jpg";
 import GlobalFooter from "../../components/GlobalFooter";
 import "./index.scss";
 
+/**
+ * 首页
+ */
 export default () => {
   return (
     <View className="indexPage">
