@@ -1,18 +1,28 @@
 import { View, Image } from "@tarojs/components";
 import { AtButton } from "taro-ui";
 import Taro from "@tarojs/taro";
-
+import questions from "../../data/questions.json";
 import headerBg from "../../assets/headerBg.jpg";
 import GlobalFooter from "../../components/GlobalFooter";
 import resultList from "../../data/question_results.json";
 
 import "./index.scss";
+import { getBastQuestionResult } from "../../utils/bizUtils";
 
 /**
  * 首页
  */
 export default () => {
-  const result = resultList[0];
+  const answerList = Taro.getStorageSync("answerList");
+  if (!answerList || answerList.length === 0) {
+    Taro.showToast({
+      title: "答案为空",
+      icon: "error",
+      duration: 3000,
+    });
+  }
+  const result = getBastQuestionResult(answerList, questions, resultList);
+
   return (
     <View className="resultPage">
       <view className="at-article__h1 title">{result.resultName}</view>
