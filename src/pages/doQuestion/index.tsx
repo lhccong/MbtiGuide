@@ -6,6 +6,7 @@ import questions from "../../data/questions.json";
 import GlobalFooter from "../../components/GlobalFooter";
 
 import "./index.scss";
+import Taro from "@tarojs/taro";
 
 /**
  * 做题页面
@@ -33,7 +34,6 @@ export default () => {
   }, [current]);
   return (
     <View className="doQuestionPage">
-      {JSON.stringify(answerList)}
       <view className="at-article__h2  title">
         {current}、{currentQuestion.title}
       </view>
@@ -60,7 +60,13 @@ export default () => {
         </AtButton>
       )}
       {current == questions.length && (
-        <AtButton type="primary" circle className="controlBtn" disabled={!currentAnswer}>
+        <AtButton
+          type="primary"
+          circle
+          className="controlBtn"
+          disabled={!currentAnswer}
+          onClick={() => Taro.navigateTo({ url: "/pages/result/index" })}
+        >
           查看结果
         </AtButton>
       )}
