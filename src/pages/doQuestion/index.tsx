@@ -65,7 +65,12 @@ export default () => {
           circle
           className="controlBtn"
           disabled={!currentAnswer}
-          onClick={() => Taro.navigateTo({ url: "/pages/result/index" })}
+          onClick={() => {
+            // 传递答案
+            Taro.setStorageSync("answerList", answerList);
+            //跳转到结果页面
+            Taro.navigateTo({ url: "/pages/result/index" });
+          }}
         >
           查看结果
         </AtButton>
