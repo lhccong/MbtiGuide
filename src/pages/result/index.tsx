@@ -1,7 +1,6 @@
 import { View, Image } from "@tarojs/components";
 import { AtButton } from "taro-ui";
 import Taro from "@tarojs/taro";
-
 import headerBg from "../../assets/headerBg.jpg";
 import GlobalFooter from "../../components/GlobalFooter";
 import resultList from "../../data/question_results.json";

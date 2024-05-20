@@ -1,12 +1,12 @@
 import { View } from "@tarojs/components";
 import { AtButton, AtRadio } from "taro-ui";
 import { useEffect, useState } from "react";
+import Taro from "@tarojs/taro";
 
 import questions from "../../data/questions.json";
 import GlobalFooter from "../../components/GlobalFooter";
 
 import "./index.scss";
-import Taro from "@tarojs/taro";
 
 /**
  * 做题页面
